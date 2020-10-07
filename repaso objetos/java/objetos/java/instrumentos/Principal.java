@@ -1,26 +1,13 @@
 package objetos.java.instrumentos;
-import java.util.Random;
+
 public class Principal {
+    public static Banda b= new Banda();
     public static void main(String[] args) {
-        Instrumento i;
-        Random rn= new Random();
-        int sel = rn.nextInt(10);
+        b.agregarMusico("Juan");
+        b.agregarMusico("Maria");
+        b.agregarMusico("Miguel");
+        b.presentarBanda();
 
-        switch (sel) {
-            case 1:
-                i=new Guitarra();
-                break;
-            case 2:
-                i=new Violin();
-                break;
-            default:
-                i=new Bajo();
-                break;
-        }
-
-        i.afinar();
-        i.tocar();
-        i.tocar("DO");
     }
     /* (ligadura dinamica donde se usa instrumento pero como guitarra o bajo)
     Inversion de dependencia donde no se definio
