@@ -26,20 +26,24 @@ class Banda():
             i= Violin()
             return i
         return i   
+    def generarRandom(self):
+        a= random.randint(0,2) 
+        return a  
 
     def presentarBanda(self):
+        a=Banda()
         for i in self.musicos: 
             i.presentar()
             rn = random.randint(0,2)
-            sel = rn
+            sel = a.generarRandom()
             if sel == 1:
                 j= Guitarra()
             elif sel == 2:
                 j= Bajo()         
             else:
                 j= Violin() 
+            print(sel)
             
-            rn=None
             
             i.tocar(j)
             
