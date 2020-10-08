@@ -40,18 +40,6 @@ class Violin(Instrumento):
         print("tocando violin en "+ nota)
 
 
-rn = random.randint(0,3)
-sel = rn
-if sel == 1:
-    i = Guitarra()
-elif sel == 2:
-    i = Bajo()
-else:
-    i = Violin()
-
-i.afinar()
-i.tocar()
-i.tocarNota("Do")
 
 
-        
+
