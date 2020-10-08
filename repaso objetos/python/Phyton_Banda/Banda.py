@@ -30,7 +30,7 @@ class Banda():
     def presentarBanda(self):
         for i in self.musicos: 
             i.presentar()
-            rn = random.randint(0,3)
+            rn = random.randint(0,2)
             sel = rn
             if sel == 1:
                 j= Guitarra()
@@ -38,7 +38,9 @@ class Banda():
                 j= Bajo()         
             else:
                 j= Violin() 
-
+            
+            rn=None
+            
             i.tocar(j)
             
             
