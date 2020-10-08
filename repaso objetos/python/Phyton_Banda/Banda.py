@@ -29,10 +29,9 @@ class Banda():
                 j= Bajo()         
             else:
                 j= Violin() 
-            
-            
-            
+           
             i.tocar(j)
+            print("")
             
             
                
