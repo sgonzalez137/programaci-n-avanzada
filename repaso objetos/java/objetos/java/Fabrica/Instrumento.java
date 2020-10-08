@@ -1,4 +1,4 @@
-package objetos.java.instrumentos;
+package objetos.java.Fabrica;
 
 public interface Instrumento {
     public void afinar();

@@ -8,7 +8,7 @@ class Instrumento:
     def tocar(self):
         pass
 
-    def tocar(cadena, nota):
+    def tocar_1(cadena, nota):
         pass
 
 
@@ -52,6 +52,8 @@ if sel == 2:
 else:
     i = Violin()
 
-i.tocar('DO')
+i.afinar()
+i.tocar()
+i.tocar_1('DO')
 
 

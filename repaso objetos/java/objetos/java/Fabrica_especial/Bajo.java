@@ -1,5 +1,5 @@
-package objetos.java.instrumentos;
-
+package objetos.java.Fabrica_especial;
+import objetos.java.Fabrica.Instrumento;
 public class Bajo implements Instrumento{
 
     @Override

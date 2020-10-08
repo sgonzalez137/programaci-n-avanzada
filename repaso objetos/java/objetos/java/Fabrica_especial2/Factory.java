@@ -1,9 +1,12 @@
-package objetos.java.instrumentos;
-
+package objetos.java.Fabrica_especial2;
+import objetos.java.Fabrica.Instrumento;
 import java.util.ArrayList;
 import java.util.Random;
+import objetos.java.Fabrica_especial.Guitarra;
+import objetos.java.Fabrica_especial.Bajo;
+import objetos.java.Fabrica_especial.Violin;
 
-public class Banda {
+public class Factory {
     ArrayList<Musico> musicos = new ArrayList<Musico>();
 
     public void agregarMusico(String nombre){
