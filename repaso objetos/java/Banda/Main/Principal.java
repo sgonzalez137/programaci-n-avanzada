@@ -1,5 +1,5 @@
-package objetos.java.Main;
-import objetos.java.Fabrica_especial2.Factory;
+package Banda.Main;
+import Banda.Fabrica_especial2.Factory;
 public class Principal {
     public static Factory b= new Factory();
     public static void main(String[] args) {

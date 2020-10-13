@@ -1,5 +1,5 @@
-package objetos.java.Fabrica_especial;
-import objetos.java.Fabrica.Instrumento;
+package Banda.Fabrica_especial;
+import Banda.Fabrica.Instrumento;
 public class Violin implements Instrumento{
     @Override
     public void afinar() {

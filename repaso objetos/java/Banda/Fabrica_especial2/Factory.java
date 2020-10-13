@@ -1,10 +1,10 @@
-package objetos.java.Fabrica_especial2;
-import objetos.java.Fabrica.Instrumento;
+package Banda.Fabrica_especial2;
+import Banda.Fabrica.Instrumento;
 import java.util.ArrayList;
 import java.util.Random;
-import objetos.java.Fabrica_especial.Guitarra;
-import objetos.java.Fabrica_especial.Bajo;
-import objetos.java.Fabrica_especial.Violin;
+import Banda.Fabrica_especial.Guitarra;
+import Banda.Fabrica_especial.Bajo;
+import Banda.Fabrica_especial.Violin;
 
 public class Factory {
     ArrayList<Musico> musicos = new ArrayList<Musico>();

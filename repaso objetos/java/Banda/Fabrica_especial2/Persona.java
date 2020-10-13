@@ -1,4 +1,4 @@
-package objetos.java.Fabrica_especial2;
+package Banda.Fabrica_especial2;
 public class Persona {
     private String nombre;
 

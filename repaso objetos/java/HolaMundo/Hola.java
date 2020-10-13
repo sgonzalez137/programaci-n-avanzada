@@ -1,4 +1,4 @@
-package objetos.java;
+package HolaMundo;
 
 public class Hola{
     public static void main(String[] args){
