@@ -1,5 +1,5 @@
-package Banda.Fabrica_especial;
-import Banda.Fabrica.Instrumento;
+package Concierto.Fabrica_cuerda;
+import Concierto.Fabrica.Instrumento;
 public class Violin implements Instrumento{
     @Override
     public void afinar() {

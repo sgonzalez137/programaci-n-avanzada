@@ -1,12 +1,13 @@
-package Banda.Main;
-import Banda.Fabrica_especial2.Factory;
+package Concierto.Main;
+import Concierto.Fabrica_especial2.Banda;
 public class Principal {
-    public static Factory b= new Factory();
+    public static Banda b= new Banda();
     public static void main(String[] args) {
+        int tip=0;
         b.agregarMusico("Sebastian");
         b.agregarMusico("Fernando");
         b.agregarMusico("Miguel");
-        b.presentarBanda();
+        b.presentarBanda(tip);
     }
     /* (ligadura dinamica donde se usa instrumento pero como guitarra o bajo)
     Inversion de dependencia donde no se definio

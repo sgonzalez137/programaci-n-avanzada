@@ -1,4 +1,4 @@
-package Banda.Fabrica;
+package Concierto.Fabrica;
 
 public interface Instrumento {
     public void afinar();
