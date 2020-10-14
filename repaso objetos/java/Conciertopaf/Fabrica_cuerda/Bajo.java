@@ -1,5 +1,5 @@
-package Concierto.Fabrica_cuerda;
-import Concierto.Fabrica.Instrumento;
+package Conciertopaf.Fabrica_cuerda;
+import Conciertopaf.Fabrica.Instrumento;
 public class Bajo implements Instrumento{
 
     @Override

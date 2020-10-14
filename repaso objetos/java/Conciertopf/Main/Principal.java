@@ -1,5 +1,5 @@
-package Conciertop.Main;
-import Conciertop.Fabrica_especial2.Factory;
+package Conciertopf.Main;
+import Conciertopf.Fabrica_especial2.Factory;
 public class Principal {
     public static Factory b= new Factory();
     public static void main(String[] args) {

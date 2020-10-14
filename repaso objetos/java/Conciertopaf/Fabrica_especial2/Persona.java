@@ -1,4 +1,4 @@
-package Concierto.Fabrica_especial2;
+package Conciertopaf.Fabrica_especial2;
 public class Persona {
     private String nombre;
 

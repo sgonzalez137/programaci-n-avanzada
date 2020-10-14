@@ -1,9 +1,10 @@
-package Concierto.Factory;
-import Concierto.Fabrica.Instrumento;
+package Conciertopaf.Factory;
 import java.util.Random;
-import Concierto.Fabrica_cuerda.Bajo;
-import Concierto.Fabrica_cuerda.Guitarra;
-import Concierto.Fabrica_cuerda.Violin;
+
+import Conciertopaf.Fabrica.Instrumento;
+import Conciertopaf.Fabrica_cuerda.Bajo;
+import Conciertopaf.Fabrica_cuerda.Guitarra;
+import Conciertopaf.Fabrica_cuerda.Violin;
 public class CuerdaInstrumentFactory {
     public Instrumento seleccionar (){
         Random rn = new Random();

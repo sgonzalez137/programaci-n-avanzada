@@ -1,5 +1,5 @@
-package Concierto.Fabrica_aire;
-import Concierto.Fabrica.Instrumento;
+package Conciertopaf.Fabrica_aire;
+import Conciertopaf.Fabrica.Instrumento;
 public class Trompeta implements Instrumento{
     @Override
     public void afinar() {
