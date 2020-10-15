@@ -1,6 +1,5 @@
 package Conciertopaf.Fabrica_especial2;
 import java.util.ArrayList;
-
 import Conciertopaf.Fabrica.Instrumento;
 import Conciertopaf.Factory.AireInstrumentFactory;
 import Conciertopaf.Factory.CuerdaInstrumentFactory;
@@ -16,15 +15,14 @@ public class Banda {
     }
 
     private Instrumento generarInstrumento(int tip){
-
-            switch(tip){
-                case 0:
-                    return new RandomInstrumentFactory().seleccionar();
-                case 1:
-                    return new AireInstrumentFactory().seleccionar();
-                default:
-                    return new CuerdaInstrumentFactory().seleccionar();
-            }
+        switch(tip){
+            case 0:
+                return new RandomInstrumentFactory().seleccionar();
+            case 1:
+                return new AireInstrumentFactory().seleccionar();
+            default:
+                return new CuerdaInstrumentFactory().seleccionar();
+        }
     }
 
     public void presentarBanda(int tip){
