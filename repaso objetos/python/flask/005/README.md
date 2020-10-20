@@ -1,6 +1,9 @@
-Reposito en el que busco colocar un breve perfil de quien es
+# Programación avanzada
 
-JOSE ALEJANDRO COTAZAR LOPEZ,cod 20181020022
+Ejemplos desarrollados en la clase de programación avanzada
 
-proyecto impulsado por el profesor Alejandro Daza en lamateria de rogramacion avanzada
+Integrantes
 
+Sebastian David Gonzalez Gutierrez cod: 20182020070
+Miguel Angel Veloza Ortiz cod:20192020012
+Jose Alejandro Cortaza Lopez cod: 20181020022
