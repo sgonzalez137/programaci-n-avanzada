@@ -42,6 +42,20 @@ def select9():
 def select10():
     return render_template('principal.html')
 
+@app.route('/academia.html')
+def select11():
+    return render_template('academia.html')
+
+@app.route('/home1.html')
+def select12():
+    return render_template('home1.html')
+@app.route('/personaldata.html')
+def select13():
+    return render_template('personaldata.html')
+
+@app.route('/tecnology.html')
+def select14():
+    return render_template('tecnology.html')
 
 @app.route('/login',methods = ['POST','GET'])
 def login():
@@ -50,7 +64,7 @@ def login():
         if user == 'sebastian':
             return render_template('home.html')
         elif user == 'alejandro':
-            return render_template('datosp.html')
+            return render_template('home1.html')
         elif user == 'miguel':
             return render_template('principal.html')
         else:
