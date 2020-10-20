@@ -5,7 +5,7 @@ public class Persona {
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-    public void presentar(){
-        System.out.println("Hola mi nombre es "+this.nombre);
+    public String getNombre(){
+        return this.nombre;
     }
 }

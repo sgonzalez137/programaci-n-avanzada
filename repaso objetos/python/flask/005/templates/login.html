@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Sebastian</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href= "{{url_for('static',filename='estilomain.css')}}">
+        <script src='main.js'></script>
+    </head>
+    <body>
+        <form action = "http://localhost:5000/login" method="post">
+            
+            <div class="maintit">
+                <p>Enter Name:</p>
+            </div>
+            <p><input type="text" name= "name"/></p>
+            <p><input type="submit" value = "submit"/></p>
+        </form>
+    </body>
+</html>

@@ -2,10 +2,13 @@ package Conciertopf.Fabrica_especial2;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
+
 import Conciertopf.Fabrica.Instrumento;
 import Conciertopf.Fabrica_especial.Bajo;
 import Conciertopf.Fabrica_especial.Guitarra;
 import Conciertopf.Fabrica_especial.Violin;
+import Conciertopf.Grafica.GuiPrersentar;
 
 public class Factory {
     ArrayList<Musico> musicos = new ArrayList<Musico>();
@@ -31,8 +34,17 @@ public class Factory {
     }
     public void presentarBanda(){
         for (Musico musico : musicos){
-            musico.presentar();
+            String m,c1,c2;
+            m = musico.getNombre();
+            
             musico.tocar(generarInstrumento());
+            
+            c1=musico.getC();
+            c2=musico.getP();
+            GuiPrersentar pre= new GuiPrersentar(m,c1,c2);
+            pre.setVisible(true);
+            
+
             
         }
     }

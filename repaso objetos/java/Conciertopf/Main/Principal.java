@@ -1,12 +1,12 @@
 package Conciertopf.Main;
-import Conciertopf.Fabrica_especial2.Factory;
+
+import Conciertopf.Grafica.GuiIntroc;
 public class Principal {
-    public static Factory b= new Factory();
+    
     public static void main(String[] args) {
-        b.agregarMusico("Sebastian");
-        b.agregarMusico("Fernando");
-        b.agregarMusico("Miguel");
-        b.presentarBanda();
+        
+        GuiIntroc in = new GuiIntroc();
+		in.setVisible(true);
     }
     /* (ligadura dinamica donde se usa instrumento pero como guitarra o bajo)
     Inversion de dependencia donde no se definio

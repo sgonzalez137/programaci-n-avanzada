@@ -2,24 +2,29 @@ package Conciertopf.Fabrica_especial;
 import Conciertopf.Fabrica.Instrumento;
 public class Guitarra implements Instrumento {
 
+    private String Cadenaa;
+    private String Cadenat;
+    private String Cadenatn;
     @Override
-    public void afinar() {
-        System.out.println("Tocando guitarra");
-
+    public String afinar() {
+        Cadenaa = "Tocando Guitarra";
+        return Cadenaa;
     }
 
     @Override
-    public void tocar() {
-        System.out.println("Afinando guitarra");
-
-
+    public String tocar() {
+        Cadenat="Afinando Guitarra";
+        return Cadenat;
     }
 
     @Override
-    public void tocar(String nota) {
-        System.out.println("Tocando guitarra en "+ nota);
+    public String tocar(String nota) {
+        Cadenatn="Tocando Guitarra en "+nota;
+        return Cadenatn;
 
     }
+    
+    
     /*Guitarra se ve obligada a implementar los metodos de Instrumento, este principio se llama "diseño por contrato" donde se le dice a los cliente- 
     voy a difinir un contrato entre usted y yo- como usted me implementa- va a usar los metodos que estan en la clase instrumento*/
  

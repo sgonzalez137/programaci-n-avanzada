@@ -1,25 +1,29 @@
 package Conciertopf.Fabrica_especial;
 import Conciertopf.Fabrica.Instrumento;
+
 public class Bajo implements Instrumento{
-
+    private String Cadenaa;
+    private String Cadenat;
+    private String Cadenatn;
     @Override
-    public void afinar() {
-        System.out.println("Tocando bajo");
-
+    public String afinar() {
+        Cadenaa = "Tocando Bajo";
+        return Cadenaa;
     }
 
     @Override
-    public void tocar() {
-        System.out.println("Afinando bajo");
-
-
+    public String tocar() {
+        Cadenat="Afinando Bajo";
+        return Cadenat;
     }
 
     @Override
-    public void tocar(String nota) {
-        System.out.println("Tocando bajo en "+ nota);
+    public String tocar(String nota) {
+        Cadenatn="Tocando Bajo en "+nota;
+        return Cadenatn;
 
     }
+    
     /* se hace re uso de la interfaz y tambien se hace sobre eescritura porque se esta 
     redifiniendo en cada instrumento, sobrecarga se hizo tambien cuando se puso tocar con 
     parametros y sin parametros, es decir usamos un poliformismo
