@@ -7,3 +7,4 @@ public abstract class FabricaMotores {
     public abstract MotorDiesel getMotorDiesel (String MotorType);   
 	public abstract MotorGasolina getMotorGasolina (String MotorType);
 }
+

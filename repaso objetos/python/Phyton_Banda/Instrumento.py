@@ -1,7 +1,7 @@
 import random
 from abc import ABCMeta, abstractmethod
 
-class Instrumento(metaclass=ABCMeta):   
+class Instrumento(metaclass=ABCMeta):
     @abstractmethod
     def afinar(self):
         pass

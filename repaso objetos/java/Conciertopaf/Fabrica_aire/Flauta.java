@@ -1,15 +1,16 @@
 package Conciertopaf.Fabrica_aire;
 import Conciertopaf.Fabrica.Instrumento;
 public class Flauta implements Instrumento{
+    
     @Override
     public void afinar() {
-        System.out.println("Tocando Flauta");
+        System.out.println("Afinando Flauta");
 
     }
 
     @Override
     public void tocar() {
-        System.out.println("Afinando Flauta");
+        System.out.println("Tocando Flauta");
 
 
     }

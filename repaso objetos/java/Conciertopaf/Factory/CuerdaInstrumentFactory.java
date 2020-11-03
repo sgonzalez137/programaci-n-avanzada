@@ -8,7 +8,7 @@ import Conciertopaf.Fabrica_cuerda.Violin;
 public class CuerdaInstrumentFactory {
     public Instrumento seleccionar (){
         Random rn = new Random();
-        int opc = rn.nextInt(6);
+        int opc = rn.nextInt(3);
         switch(opc){
             case 0:
                 return new Guitarra();
