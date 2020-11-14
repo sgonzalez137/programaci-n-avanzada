@@ -18,20 +18,20 @@ elementos = [int(x) for x in linea.split(",")]
 print( elementos[x],"\n")
 ranking
 
-def ranking(jugador2)
-	if elemento[x-1] < jugador2[x-1]: #valida si el numerode intentos es menor que el el ultimo puntaje ingresado
+def ranking(jugador2):
+	if elemento[x-1] < jugador2[x-1]: #valida si el numero de intentos es menor que el el ultimo puntaje ingresado
 		return anexarpuntaje(jugador2)
 	if elemento[x-1] = jugador2[x-1]:
 		if elemento[x] < jugador[x]:
-			return anexarpuntaje(jugado2)
-	else
+			return anexarpuntaje(jugador2)
+	else:
 		break
 	
 
-def anexarpuntaje(jugador)
+def anexarpuntaje(jugador):
 	f = open("puntajes.txt","a")
 	f.write(jugador)
 	f.close()
 	return 0
 
-()
+

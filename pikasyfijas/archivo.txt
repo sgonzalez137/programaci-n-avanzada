@@ -1,0 +1,4 @@
+1, miguel, 3, 324, 0, 3, True
+1, angel, 4, 432, 0, 3, True
+2, jose, 1, 521, 0, 3, True
+1, alejandro, 2, 182, 0, 3, False
