@@ -1,5 +1,3 @@
-import time
-
 from random import randint
 
 def generar_numero(cantidad):
@@ -51,11 +49,11 @@ while g != p :
         p = [int(x) for x in input("ingrese un numero: ")]
         aux2 =cantidad
         while cantidad>0:
-            print(cantidad)
+            #print(cantidad)
             auxcant = i
-            
+            x=i-1
             #print(g)
-            print(p)
+            #print(p)
             if g[cantidad-1]==p[cantidad-1]:
                 fijas = fijas + 1
                 picas = picas - 1
@@ -72,28 +70,23 @@ while g != p :
         jugadas=jugadas+ 1
         
         
-        
-        print( picas, "p ", fijas, " f" )
-        print("fijas: ")
-        print(fijas)
+        print(picas,"picas ", fijas, "fijas \t te quedan estos intentos", intentos-jugadas )
+        #print(picas)
+        #print("fijas: ")
+        #print(fijas)
         fijas =0
         picas =0
         cantidad = aux2
-        print("te quedan estos intentos")
-        print(intentos-jugadas)
+        #print("te quedan estos intentos")
+        #print(intentos-jugadas)
     else:
         resp=input("desea continuar si o no: ")
         if resp == "si":
             jugadas= 14
-#####
-
-###
             extra= extra +1
         elif resp == "no":
             print("gameover")
             jugadas=jugadas + extra
             break
-            
 
 
-#puntaje = [usuario, jugadas]

@@ -26,6 +26,7 @@ def capturar_numero():
 
 
 usuario = input("Ingrese su nombre: ")
+timeini= time.time()
 
 jugadas = 0
 
@@ -92,8 +93,34 @@ while g != p :
         elif resp == "no":
             print("gameover")
             break
-            jugadas=jugadas + extra
+jugadas=jugadas + extra
+timeout = time.time()
+tiempo = timeout -timeini
+jugador=[usuario, cantidad, jugadas, tiempo] 
+
+#creando el archivo de puntajes
+print jugador[2]
+f = open("puntajes.txt","r")
+g = f.readlines()
+elementos = [int(x) for x in linea.split(",")]
+print( elementos[x],"\n")
+ranking
+
+def ranking(jugador)
+        if elemento[x-1] < jugador2[x-1]: #valida si el numerode intentos es menor que el el ultimo puntaje ingresado
+                return anexarpuntaje(jugador2)
+        if elemento[x-1] = jugador2[x-1]:
+                if elemento[x] < jugador[x]:
+                        return anexarpuntaje(jugado2)
+        else
+                break
 
 
-puntaje = [usuario, jugadas, 
+def anexarpuntaje(jugador)
+        f = open("puntajes.txt","a")
+
+
+
+
+
 

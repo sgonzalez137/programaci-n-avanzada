@@ -1,10 +1,10 @@
 jugador1 = [ jose, 4, 0.456]
 
-jugador2 = [alejandro, 3, 1,23]
+jugador2 = [alejandro, 3, 1.23]
 
-jugador3 = [nanaiga, 3, 0,98]
+jugador3 = [nanaiga, 3, 0.98]
 
-print (jugador1[2])
+print (jugador[2])
 
 #creando el archivo de puntajes
 
