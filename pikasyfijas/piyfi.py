@@ -1,4 +1,5 @@
 from random import randint
+from Archivo import Archivo
 
 def generar_numero(cantidad):
     secreto = []
@@ -24,8 +25,9 @@ def capturar_numero():
 
 
 usuario = input("Ingrese su nombre: ")
-
+attemps=[]
 jugadas = 0
+resp=None
 
 n = int(input("ingrese 1 si quiere dificutal facil( para 3 numeros), 2 si es normal (para 5 numeros)y 3 si es dificil (para 6 numeros)\n"))
 
@@ -42,11 +44,13 @@ picas = 0
 fijas = 0
 extra = 0
 g = generar_numero(cantidad)
+
 p = []
 i = cantidad
 while g != p :
     if intentos > jugadas:
-        p = [int(x) for x in input("ingrese un numero: ")]
+        p = [x for x in input("ingrese un numero: ")]
+        
         aux2 =cantidad
         while cantidad>0:
             #print(cantidad)
@@ -54,14 +58,14 @@ while g != p :
             x=i-1
             #print(g)
             #print(p)
-            if g[cantidad-1]==p[cantidad-1]:
+            if g[cantidad-1]==int(p[cantidad-1]):
                 fijas = fijas + 1
                 picas = picas - 1
-                
+                    
             
             while auxcant>0 :
                 
-                if g[auxcant-1]==p[cantidad-1]:
+                if g[auxcant-1]==int(p[cantidad-1]):
                     picas = picas + 1
                 auxcant = auxcant - 1
             cantidad=cantidad- 1
@@ -71,6 +75,9 @@ while g != p :
         
         
         print(picas,"picas ", fijas, "fijas \t te quedan estos intentos", intentos-jugadas )
+        attemp=["".join(p),picas,fijas]
+        attemps.append(attemp)
+        fijasAux=fijas
         #print(picas)
         #print("fijas: ")
         #print(fijas)
@@ -79,6 +86,8 @@ while g != p :
         cantidad = aux2
         #print("te quedan estos intentos")
         #print(intentos-jugadas)
+        for x in range(len(p)):
+            p[x]=int(p[x])
     else:
         resp=input("desea continuar si o no: ")
         if resp == "si":
@@ -88,5 +97,16 @@ while g != p :
             print("gameover")
             jugadas=jugadas + extra
             break
+if resp==None:
+    for x in range(len(g)):
+        g[x]=str(g[x])
+    jugador=[str(n),usuario,"".join(g),"0",str(fijasAux),str(jugadas),str(attemps)]
 
+f=Archivo()
+f.crearArchivo("score.txt")
+f.escribirJugador(jugador)
+
+opcn=input("Escriba 1 para ver el mejor puntaje en este nivel o 0 para salir: ")
+if opcn=="1":
+    print("el mejor puntaje del nivel "+str(n)+" es de: "+f.mejorPuntaje(str(n))[1]+" con "+f.mejorPuntaje(str(n))[5]+" intentos.")
 
