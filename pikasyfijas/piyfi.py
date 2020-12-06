@@ -44,6 +44,7 @@ picas = 0
 fijas = 0
 extra = 0
 g = generar_numero(cantidad)
+
 p = []
 i = cantidad
 while g != p :

@@ -1,10 +1,12 @@
 import os
 
 #clase que se encarga de controlar las acciones del archivo
-class Archivo():
+class Archivo(): 
+    '''sal'''
 
     #crea el archivo, si ya existe no hace nada 
     def crearArchivo(self, nombre):
+        '''aas'''
         #os.remove("score.txt")
         if not os.path.exists(nombre):
             f=open(nombre,"x")
