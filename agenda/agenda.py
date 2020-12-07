@@ -5,7 +5,7 @@ app = Flask(__name__)
 mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'agendap'
+app.config['MYSQL_DATABASE_DB'] = 'agenda'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 #app.config['MYSQL_DATABASE_PORT'] = 6603
 mysql.init_app(app) 
@@ -25,16 +25,15 @@ def ver_todos():
                     "LEFT JOIN contactos as con on (usu.usu_id = con.usu_id) " +
                     "LEFT JOIN citas as cit on (con.con_id = cit.con_id)")
     data = cursor.fetchall()
-    return render_template('todos.html', citas = data )
+    return render_template('todos.html', contactos = data )
 
-@app.route('/update')
-def actualizar_usuarios():
-    cursor.execute("SELECT usu_nombre,usu_clave, con_nombre, con_apellido, con_telefono, cit_lugar, cit_fecha " +
-                    "FROM usuarios as usu " + 
-                    "LEFT JOIN contactos as con on (usu.usu_id = con.usu_id) " +
-                    "LEFT JOIN citas as cit on (con.con_id = cit.con_id)")
+@app.route('/citas')
+def ver_citas():
+    cursor.execute("SELECT cit_id,cit.con_id,cit_lugar,cit_fecha,cit_descripcion,con.con_nombre "+ 
+                    "FROM citas as cit "+
+                    "LEFT JOIN contactos as con on (con.con_id = cit.con_id)")
     data = cursor.fetchall()
-    return render_template('ingreso.html', usuarios = data )
+    return render_template('citas.html', citas = data )
 
 if __name__ == '__main__':
     app.run(debug=True)
