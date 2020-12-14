@@ -2,16 +2,17 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'> 
-        <title >Todos</title>
+        <title >Contactos</title>
         <meta name='viewport' content='width=device-width, initial-scare=1'>
         <link rel="stylesheet" type='text/css' media='screen' href="{{ url_for('static', filename='css/estilos.css') }}">
+
     </head>
     <body>
         <nav>
             <form action="/usuarios" style="display: inline">
                 <input type="submit" value="Usuarios">
             </form>
-            <form action="/todos" style="display: inline">
+            <form action="/contactos" style="display: inline">
                 <input type="submit" value="Contactos">
             </form>
             <form action="/citas" style="display: inline">
@@ -21,19 +22,32 @@
         <table border='1'>
             <tr>
                 <th>Usuario</th>
-                <th colspan="3">Acciones</th>
+                <th >Nombre</th>
+                <th >Apellido</th>
+                <th >Dirección</th>
+                <th >Telefono</th>
+                <th >Correo</th>
+                <th colspan="2">Administración</th>
+
             </tr>
-            {% for u in usuarios%}
+            {% for u in contactos%}
             <tr>
+                <td>{{ u[0] }}</td>
                 <td>{{ u[1] }}</td>
-                <td><input type="submit" value="Actualizar"></td>
-                <td><input type="submit" value="Eliminar"></td>
-                <td><input type="submit" value="Agregar contacto"></td>
-    
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>{{ u[4] }}</td>
+                <td>{{ u[5] }}</td>
+                <td>                   
+                        <input type="submit" value="Actualizar">
+                </td>
+                <td>
+                        <input type="submit" value="Eliminar">
+                </td>
             </tr>
         {% endfor %}
         </table>
-        <input type="submit" value="nuevo usuario">
+        <input type="submit" value="Agregar contacto">
     </body>
 
 </html>
