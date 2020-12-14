@@ -37,8 +37,8 @@ def ver_citas():
 
 @app.route('/contactos')
 def ver_contactos():
-    cursor.execute("SELECT usu_nombre, con_nombre, con_apellido, con_direccion, con_telefono, con_email " +
-                    "FROM usuarios as usu " + 
+    cursor.execute("SELECT usu_nombre, con_nombre, con_apellido,con_direccion, con_telefono, con_email, con_id "+
+                    "FROM usuarios as usu "+
                     "INNER JOIN contactos as con on (usu.usu_id = con.usu_id) ")
     data = cursor.fetchall()
     return render_template('contactos.html', contactos = data )    
@@ -76,6 +76,23 @@ def eliminar_usuario():
         cursor.execute("DELETE from usuarios where usu_id = " + id)
         conn.commit()
         return redirect(url_for('ver_usuarios'))    
+'''
+@app.route('/actualizar_contacto', methods=['GET', 'POST'])
+def actualizar_usuario():
+    if request.method == 'POST':
+        nombre = request.form["id_nombre"]
+        apellido= request.form["apellido"]
+
+        cursor.execute("""UPDATE `usuarios` SET `usu_nombre`=%s,`usu_clave`=sha1(%s) WHERE `usu_id`= %s""", (nombre, clave, id)) 
+        conn.commit()
+        return redirect(url_for('ver_usuarios'))
+    else:
+        id = request.args["id"]
+        cursor.execute("SELECT usu_id, usu_nombre from usuarios where usu_id = " + id)
+        usuario = cursor.fetchone()
+        return render_template('editar_contacto.html', usuario=usuario)
+     '''   
+
 if __name__ == '__main__':
     app.run(debug=True)
 

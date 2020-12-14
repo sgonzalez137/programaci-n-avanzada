@@ -38,12 +38,9 @@
                 <td>{{ u[3] }}</td>
                 <td>{{ u[4] }}</td>
                 <td>{{ u[5] }}</td>
-                <td>                   
-                        <input type="submit" value="Actualizar">
-                </td>
-                <td>
-                        <input type="submit" value="Eliminar">
-                </td>
+            
+                <td><a href="/actualizar_contacto?id={{ u[6] }}">Editar</a></td>
+                <td><a href="/eliminar_contacto?id={{ u[6] }}">Eliminar</a> </td>
             </tr>
         {% endfor %}
         </table>

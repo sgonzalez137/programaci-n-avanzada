@@ -26,14 +26,12 @@
             {% for u in usuarios%}
             <tr>
                 <td>{{ u[1] }}</td>
-                <td><input type="submit" value="Actualizar"></td>
-                <td><input type="submit" value="Eliminar"></td>
-                <td><input type="submit" value="Agregar contacto"></td>
-    
+                <td><a href="/actualizar_usuario?id={{ u[0] }}">Editar</a></td>
+                <td><a href="/eliminar_usuario?id={{ u[0] }}">Eliminar</a> </td>                
             </tr>
         {% endfor %}
         </table>
-        <input type="submit" value="nuevo usuario">
+        <a href="/agregar_usuario">Agregar usuario</a>
     </body>
 
 </html>
