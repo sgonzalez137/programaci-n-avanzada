@@ -1,6 +1,17 @@
 <html>
     <head></head>
     <body>
+        <nav>
+            <form action="/usuarios" style="display: inline">
+                <input type="submit" value="Usuarios">
+            </form>
+            <form action="/contactos" style="display: inline">
+                <input type="submit" value="Contactos">
+            </form>
+            <form action="/citas" style="display: inline">
+                <input type="submit" value="Citas">
+            </form>
+        </nav>
         <table border='1'>
             <tr>
                 <th>Usuario</th>
@@ -9,7 +20,7 @@
                 <th colspan='2'>Acciones</th>
 
             </tr>
-            {% for u in citas%}
+            {% for u in contactos%}
             <tr>
                 <td>{{ u[0] }}</td>
                 <td>{{ u[1] }}</td>
@@ -17,19 +28,16 @@
                 <td>{{ u[3] }}</td>
                 <td>{{ u[4] }}</td>
                 <td>{{ u[5] }}</td>
-                <td>
-                    <form action="/update" style="display: inline">
-                        <input type="submit" value="Update">
-                    </form>
+                <td>                   
+                        <input type="submit" value="Actualizar">
                 </td>
                 <td>
-                    <form action="/update" style="display: inline">
-                        <input type="submit" value="Delete">
-                    </form>
+                        <input type="submit" value="Eliminar">
                 </td>
             </tr>
         {% endfor %}
         </table>
+        <input type="submit" value="Agregar contacto">
     </body>
 
 </html>
