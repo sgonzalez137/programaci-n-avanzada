@@ -1,0 +1,68 @@
+¿Qué es una metaclase? Pues es una clase cuyas instancias son clases en lugar de objetos. Es decir, si para construir un objeto usas una clase, para construir una clase usas una metaclase.
+
+¿Y eso para qué sirve? Pues resulta muy útil principalmente para dos cosas:
+
+Cuando no sea posible determinar el tipo de un objeto hasta el momento de la ejecución del programa, o cuando sea necesario crear una clase a la medida de las circunstancias. Se podría decir que en este caso la metaclase funciona como una “fábrica de clases” especializada.
+Cuando se desea componer o modificar el comportamiento o características de una clase en el momento de su creación por medio de herencia o por mecanismos de construcción dinámicos. Es algo parecido a la Programación Orientada a Aspectos o como una generalización del patrón decorator.
+
+
+Antes de seguir: __new__ e __init__
+__new__ e __init__ son dos de los métodos especiales que tienen todas las clases. Es muy habitual que el programador escriba un método __init__ para sus clases (tanto que ni siquiera voy a poner un ejemplo). Este método se ejecuta después de construirse la instancia y se utiliza para inicializar los atributos que lo requieran y, en general, hacer trabajo de “setup” de la instancia.
+
+El uso de __new__ es mucho menos frecuente, hasta el punto de que muchos programadores con muchas horas de vuelo en Python nunca lo han usado. __new__ es el verdadero “constructor”, es el encargado de crear la instancia y proporcionarle una ubicación en memoria.
+
+__new__ es un método peculiar. Es estático (staticmethod), es decir, existe con independencia de las instancias de la clase y por tanto no tiene un argumento self. En su lugar, lo que se le pasa como argumento es la propia clase, normalmente nombrado como cls.
+
+El proceso de creación de un objeto (instancia) de una clase es más o menos así (después lo refinamos):
+
+Se invoca la clase con los argumentos requeridos
+Se ejecuta el método __new__ pasándose la clase a sí misma como primer argumento, y a continuación los argumentos que indicó el usuario en la “invocación” original.
+__new__ retorna una nueva instancia (esto es obligatorio).
+Se ejecuta el método __init__ pasando como primer argumento la instancia creada por __new__ y también todos los argumentos de la invocación original.
+
+
+
+Escribiendo un método __new__
+Como ejemplo, esta es una clase que formatea una cadena como título (pone en mayúscula la primera letra de cada palabra). Lo interesante es que esta clase ES UNA cadena, es decir, hereda del tipo predefinido str:
+
+>>> class Title(str):
+...    def __new__(cls, val):
+...       print 'construyendo un nuevo objeto'
+...       return str.__new__(cls, val.title())
+
+>>> Title('transparencias adiós')
+
+
+ejemplo muy simple y no tenga mucha utilidad, demuestra la forma en que se construye el objeto y permite algo que no puede hacerse de otro modo; puede decidir el valor de un objeto de tipo inmutable (como es str) en el único momento en que es posible: su creación. Si quieres, puedes comprobar que esto no se puede hacer utilizando __init__.
+
+
+La sentencia return invoca directamente el método __new__ de la superclase porque ése es el único modo de conseguir una creación limpia, es decir, evitando que se ejecute el método __init__ de la superclase. Para este ejemplo, lo podrías cambiar por:
+
+return val.title()
+
+
+metaclase
+La metaclase más simple (y más inútil) que se puede escribir es algo como:
+
+class MyMetaclase(type):
+   pass
+
+metaclase
+
+
+>>> class MyMetaclase2(type):
+...    def habla(cls):
+...       print 'método de la clase', cls
+...
+>>> MyMetaclase2.habla()
+TypeError: unbound method habla() must be called with MyMetaclase2 instance as first argument (got nothing instead)
+>>> A = MyMetaclase2('A', (), {})
+>>> A.habla()
+método de la clase <class '__main__.A'>
+>>> a1 = A() # una instancia de la clase A
+>>> a1.habla()
+'A' object has no attribute 'habla'
+
+ la metaclase pueda ser invocado se requiere de una instancia (una clase); eso no resulta sorprendente, es lo mismo que ocurre con los métodos normales en las clases normales.
+
+
