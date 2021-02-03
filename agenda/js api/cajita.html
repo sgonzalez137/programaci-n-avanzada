@@ -11,13 +11,13 @@
         alert(numero)
     </script>
     <canvas id="micuadro" width="200" height="200">
-      Contenido que sÃ³lo verÃ¡n los usuarios que no soportan canvas en su navegador.
+      <h1>probando</h1>
     </canvas>
     <script language="JavaScript">
       window.onload = function(){
         var caja = document.getElementById("micuadro");
         var cajato = caja.getContext('2d');
-        cajato.fillStyle = "#AFBD26";
+        cajato.fillStyle = "#AFBD26" + Integer.toHexString(n);
         cajato.fillRect(100, 100, 50, 50);
       }
     </script>
